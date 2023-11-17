@@ -1,15 +1,22 @@
 <template>
-    <h2>{{ a }}</h2>
-    <h3>{{ b }}</h3>
-    <h3>{{ c }}</h3>
+    <button v-bind="btn1">aaa</button>
 </template>
+
+<style>
+.c1 {
+    color: red;
+}
+</style>
+
 <script>
 export default {
     data() {
         return {
-            a: "hello vue3"
-            b: true,
-            c: false,
+            btn1: {
+                id: "btn1",
+                class: "c1",
+                disabled: true,
+            }
         }
     }
 }
