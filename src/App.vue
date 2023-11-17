@@ -1,23 +1,9 @@
 <template>
-    <button v-bind="btn1">aaa</button>
+    <IfDemo />
+    <ListDemo />
 </template>
 
-<style>
-.c1 {
-    color: red;
-}
-</style>
-
-<script>
-export default {
-    data() {
-        return {
-            btn1: {
-                id: "btn1",
-                class: "c1",
-                disabled: true,
-            }
-        }
-    }
-}
+<script setup>
+import IfDemo from './components/IfDemo.vue'
+import ListDemo from './components/ListDemo.vue'
 </script>
