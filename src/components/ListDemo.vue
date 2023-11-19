@@ -1,6 +1,11 @@
 <template>
-    <div v-for="item in userInfo">
+    <div v-if="userContentIsNotEmpty" v-for="(item, idx) in userInfo.content" :key="idx">
         <p>{{ item }}</p>
+    </div>
+    <div>{{ userContentIsNotEmptyText }}</div>
+    <div>
+        <input type="text" v-model.trim="aaa">
+    {{ aaa }}
     </div>
 </template>
 
@@ -10,10 +15,23 @@ export default {
         return {
             userInfo: {
                 name: '张三',
-                age: 18,
-                gender: '男',
-            }
+                content: ['a', 'b', 'c'],
+            },
+            aaa: 0,
         }
+    },
+    watch: {
+        aaa(newVal, oldVal) {
+            console.log({ newVal, oldVal });
+        }
+    },
+    computed: {
+        userContentIsNotEmpty() {
+            return this.userInfo.content.length > 0;
+        },
+        userContentIsNotEmptyText() {
+            return this.userContentIsNotEmpty ? '用户内容不为空' : '用户内容为空';
+        },
     }
 }
 </script>
