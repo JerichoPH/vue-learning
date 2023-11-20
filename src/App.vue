@@ -1,9 +1,7 @@
 <template>
-    <IfDemo />
-    <ListDemo />
+    <ComponentA />
 </template>
 
 <script setup>
-import IfDemo from './components/.vue'
-import ListDemo from './components/ListDemo.vue'
+import ComponentA from './components/ComponentA.vue'
 </script>
