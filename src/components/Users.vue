@@ -2,7 +2,6 @@
 
 <script>
 import axios from 'axios';
-import $ from 'jquery';
 export default {
     name: 'Users',
     props: {},
@@ -11,20 +10,17 @@ export default {
     },
     methods: {
         fnInit() {
-            $.ajax({
-                type: 'get',
-                url: 'http://localhost:10080/api/account',
-                headers: {
+            axios.get('http://baidu.com')
+                .headers({
                     'Accpet': 'application/json',
                     'Authorization': 'AU a2279d3b-72c9-4c75-8be7-05902eb4a74c'
-                },
-                success(res) {
+                })
+                .then(res => {
                     console.log(res);
-                },
-                error(err) {
+                })
+                .catch(err => {
                     console.log(err);
-                }
-            });
+                });
         },
     },
 }
