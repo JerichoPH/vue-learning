@@ -1,6 +1,7 @@
 <template>
     <h3>Component C</h3>
     <p>{{ username }}|{{ age }}</p>
+    <button @click="fnSendMessage">发送数据（C组件）</button>
 </template>
 
 <script>
@@ -14,11 +15,19 @@ export default {
             required: true,
             default: '',
         },
-        age:{
+        age: {
             type: Number,
             required: true,
             default: 999,
         },
     },
+    methods: {
+        fnSendMessage() {
+            this.$emit('onSendMessage', {
+                username: this.username,
+                age: this.age,
+            });
+        },
+    }
 }
 </script>
