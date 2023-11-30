@@ -9,6 +9,7 @@ export default {
     data() {
         return {}
     },
+    emits: ['sendMessage'],
     props: {
         username: {
             type: String,
@@ -23,7 +24,7 @@ export default {
     },
     methods: {
         fnSendMessage() {
-            this.$emit('onSendMessage', {
+            this.$emit('sendMessage', {
                 username: this.username,
                 age: this.age,
             });
