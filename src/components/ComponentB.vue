@@ -1,19 +1,23 @@
 <template>
     <h3>Component B</h3>
-    <p>{{ msg }}</p>
+    <ComponentC v-for="(user, index) in users" :key="index" :username="user.username" :age="user.age" />
 </template>
 
 <script>
+import ComponentC from './ComponentC.vue'
 export default {
-    data() {
+    data() { 
         return {}
     },
     props: {
-        msg: {
-            type: String,
+        users: {
+            type: Array,
             required: true,
-            default: '',
-        }
+            default: [],
+        },
+    },
+    components: {
+        ComponentC,
     },
 }
 </script>
