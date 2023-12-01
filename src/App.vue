@@ -1,10 +1,10 @@
 <template>
     <ComponentA />
     <hr>
-    <Users />
+    <Accounts />
 </template>
 
 <script setup>
 import ComponentA from './components/ComponentA.vue';
-import Users from './components/Users.vue';
+import Accounts from './components/Accounts.vue';
 </script>
